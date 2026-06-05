@@ -14,6 +14,21 @@
   <img src="https://img.shields.io/badge/Certification-BNSP_Data_Scientist-gold?style=flat-square" alt="BNSP"/>
 </p>
 
+## Table of Contents
+
+1. [Executive Synopsis](#1-executive-synopsis)
+2. [Regulatory Compliance & Competency Mapping (SKKNI)](#2-regulatory-compliance--competency-mapping-skkni)
+3. [Epistemological Validation & Data Topography](#3-epistemological-validation--data-topography-notebooks-01--02)
+4. [Algorithmic Optimization & Predictive Efficacy](#4-algorithmic-optimization--predictive-efficacy-notebook-03)
+5. [Algorithmic Transparency & Model Agnosticism](#5-algorithmic-transparency--model-agnosticism-notebook-04---xai)
+6. [System Architecture (CRISP-DM Topology)](#6-system-architecture-crisp-dm-topology)
+7. [Deployment: Enterprise Command Center UI](#7-deployment-enterprise-command-center-ui)
+8. [Repository Ontology](#8-repository-ontology)
+9. [Execution Protocol](#9-execution-protocol)
+10. [Author](#author)
+
+---
+
 ## 1. Executive Synopsis
 This repository encapsulates an end-to-end Machine Learning architecture engineered to mitigate **Non-Performing Loans (NPL)** within the financial sector. Transcending conventional black-box paradigms, this project constructs a sophisticated **Decision Support System**. It leverages a probabilistically optimized *Voting Ensemble* (anchored by XGBoost) and is deeply integrated with **Explainable AI (XAI)** frameworks. 
 
