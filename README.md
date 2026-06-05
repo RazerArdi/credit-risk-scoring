@@ -1,4 +1,4 @@
-<h1 align="center">Enterprise Credit Risk Command Center: Predictive Scoring & XAI Architecture</h1>
+<h1 align="center">Credit Risk Center: Predictive Scoring & XAI Architecture</h1>
 
 <p align="center">
   <img src="src/Img/BNSP.png" alt="BNSP Logo" height="80" style="margin-right: 20px;"/>
