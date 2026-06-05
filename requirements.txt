@@ -1,0 +1,30 @@
+# ==============================================================================
+# CREDIT RISK COMMAND CENTER - DEPENDENCIES
+# Architecture: BNSP Data Scientist Certification Portfolio
+# ==============================================================================
+
+# 1. Core Data Manipulation & Mathematical Computation
+pandas>=2.0.0
+numpy>=1.24.0
+scipy>=1.10.0
+
+# 2. Machine Learning Frameworks & Preprocessing
+scikit-learn>=1.2.2
+imbalanced-learn>=0.11.0
+xgboost>=2.0.3
+
+# 3. Hyperparameter Optimization Engine
+optuna>=3.4.0
+
+# 4. Explainable AI (XAI) - Model Interpretability
+shap>=0.44.0
+
+# 5. Deployment & User Interface (Web Dashboard)
+streamlit>=1.30.0
+
+# 6. Data Serialization & Utilitas
+joblib>=1.3.2
+
+# 7. (Opsional) Jupyter Notebook Environment (Jika Asesor ingin menjalankan source code)
+jupyter>=1.0.0
+ipykernel>=6.25.0

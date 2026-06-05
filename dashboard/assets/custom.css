@@ -1,0 +1,383 @@
+/*
+ * Berkas  : dashboard/assets/custom.css
+ * Tema    : Credit Audit Center — Dark Tactical UI
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg-base:      #080c14;
+  --bg-surface:   #0d1117;
+  --bg-elevated:  #131b27;
+  --bg-card:      #111827;
+  --bg-sidebar:   #0a0f1a;
+
+  --accent-cyan:  #00e5c4;
+  --accent-red:   #ff4d6d;
+  --accent-muted: #2563eb;
+
+  --text-primary:   #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted:     #4a5568;
+
+  --border-dim:    #1e2533;
+  --border-subtle: #2d3748;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --font-ui:   'Syne', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+.stApp {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+}
+
+.block-container {
+  padding-top: 1.5rem !important;
+  padding-bottom: 3rem !important;
+  max-width: 1280px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-ui);
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+p, li, label {
+  font-family: var(--font-ui);
+  color: var(--text-secondary);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border-dim);
+  margin: 1.6rem 0;
+}
+
+/* Header utama dasbor */
+.cr-header {
+  position: relative;
+  padding: 2rem 2.5rem 1.8rem;
+  background: linear-gradient(135deg, #0d1117 0%, #111827 60%, #0d1a2d 100%);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--accent-cyan);
+  border-radius: var(--radius-lg);
+  margin-bottom: 1.8rem;
+  overflow: hidden;
+}
+
+.cr-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 229, 196, 0.02) 2px,
+    rgba(0, 229, 196, 0.02) 4px
+  );
+  pointer-events: none;
+}
+
+.cr-header::after {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(0,229,196,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cr-header__badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--accent-cyan);
+  background: rgba(0, 229, 196, 0.08);
+  border: 1px solid rgba(0, 229, 196, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 3px 10px;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.cr-header__badge::before {
+  content: '●';
+  margin-right: 6px;
+  color: var(--accent-cyan);
+  animation: blink 1.4s step-start infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.cr-header__title {
+  font-family: var(--font-ui);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  margin: 0 0 0.4rem;
+  line-height: 1.15;
+}
+
+.cr-header__sub {
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+/* Label judul setiap seksi */
+.section-title {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  margin-bottom: 0.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-dim);
+}
+
+.section-sub {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Kartu ringkasan skor di bagian atas */
+.scorecard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--accent-cyan);
+  border-radius: var(--radius-md);
+  padding: 1.3rem 1.5rem;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.45);
+  transition: box-shadow 0.2s ease;
+}
+
+.scorecard:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.6);
+}
+
+.scorecard__label {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.scorecard__value {
+  font-family: var(--font-mono);
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* Kartu profil nasabah (KYC) */
+.profile-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  border-top: 2px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.2rem 1.2rem;
+  height: 100%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.35);
+}
+
+.profile-card__title {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-dim);
+}
+
+.profile-card__row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.55rem;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  flex-wrap: wrap;
+}
+
+/* Tag label kecil di dalam baris profil */
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.tag--neutral {
+  background: rgba(148,163,184,0.1);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+.tag--muted {
+  background: rgba(74, 85, 104, 0.3);
+  color: var(--text-muted);
+  border: 1px solid var(--border-dim);
+}
+
+.tag--success {
+  background: rgba(0, 229, 196, 0.1);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(0, 229, 196, 0.25);
+}
+
+.tag--danger {
+  background: rgba(255, 77, 109, 0.1);
+  color: var(--accent-red);
+  border: 1px solid rgba(255, 77, 109, 0.25);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+/* Sidebar navigasi */
+[data-testid="stSidebar"] {
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border-dim);
+}
+
+[data-testid="stSidebar"] * {
+  font-family: var(--font-ui);
+}
+
+[data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] .sidebar-section {
+  color: var(--text-primary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+[data-testid="stSidebar"] .stSelectbox label {
+  color: var(--text-secondary) !important;
+  font-size: 0.8rem;
+}
+
+/* Override komponen bawaan Streamlit */
+.stSelectbox > div > div {
+  background-color: var(--bg-elevated) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius-sm) !important;
+  color: var(--text-primary) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.85rem !important;
+}
+
+div[data-testid="metric-container"] {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--accent-cyan);
+  padding: 1.1rem 1.3rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+[data-testid="stMetricLabel"] {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: var(--font-ui);
+}
+
+[data-testid="stMetricValue"] {
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+div[data-testid="stAlert"] {
+  border-radius: var(--radius-sm) !important;
+  border: 1px solid var(--border-subtle) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.83rem !important;
+}
+
+.stCaption, small {
+  color: var(--text-muted) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.72rem !important;
+}
+
+.stButton > button {
+  background-color: rgba(0, 229, 196, 0.08);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(0, 229, 196, 0.35);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stButton > button:hover {
+  background-color: rgba(0, 229, 196, 0.15);
+  box-shadow: 0 0 12px rgba(0, 229, 196, 0.2);
+}
+
+.stPlotlyChart {
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
